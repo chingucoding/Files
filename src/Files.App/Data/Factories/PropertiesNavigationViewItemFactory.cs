@@ -61,6 +61,12 @@ namespace Files.App.Data.Factories
 				ItemType = PropertiesNavigationViewItemType.Compatibility,
 				OpacityIconStyle = (Style)Application.Current.Resources["ColorIconCompatibilityProperties"],
 			};
+			var storageUsageItem = new NavigationViewItemButtonStyleItem()
+			{
+				Name = "Test",
+				ItemType = PropertiesNavigationViewItemType.StorageUsage,
+				OpacityIconStyle = (Style)Application.Current.Resources["ColorIconCompatibilityProperties"],
+			};
 
 			PropertiesNavigationViewItems.Add(generalItem);
 			PropertiesNavigationViewItems.Add(securityItem);
@@ -70,6 +76,7 @@ namespace Files.App.Data.Factories
 			PropertiesNavigationViewItems.Add(detailsItem);
 			PropertiesNavigationViewItems.Add(customizationItem);
 			PropertiesNavigationViewItems.Add(compatibilityItem);
+			PropertiesNavigationViewItems.Add(storageUsageItem);
 
 			if (item is List<ListedItem> listedItems)
 			{
@@ -85,6 +92,7 @@ namespace Files.App.Data.Factories
 				PropertiesNavigationViewItems.Remove(securityItem);
 				PropertiesNavigationViewItems.Remove(customizationItem);
 				PropertiesNavigationViewItems.Remove(hashesItem);
+				PropertiesNavigationViewItems.Remove(storageUsageItem);
 			}
 			else if (item is ListedItem listedItem)
 			{
@@ -119,6 +127,9 @@ namespace Files.App.Data.Factories
 
 				if (!compatibilityItemEnabled)
 					PropertiesNavigationViewItems.Remove(compatibilityItem);
+
+				if (!isFolder)
+					PropertiesNavigationViewItems.Remove(storageUsageItem);
 			}
 			else if (item is DriveItem)
 			{

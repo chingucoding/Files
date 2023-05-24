@@ -47,5 +47,10 @@ namespace Files.Backend.Enums
 		/// Shortcut page type
 		/// </summary>
 		Shortcut,
+
+		/// <summary>
+		/// Storage usage page type
+		/// </summary>
+		StorageUsage,
 	}
 }
