@@ -20,7 +20,7 @@
 	DataContext="{x:Bind ViewModel, Mode=OneWay}"
 	KeyboardAcceleratorPlacementMode="Hidden"
 	Loaded="Page_Loaded"
-	NavigationCacheMode="Required"
+	NavigationCacheMode="Disabled"
 	SizeChanged="Page_SizeChanged"
 	mc:Ignorable="d">
 

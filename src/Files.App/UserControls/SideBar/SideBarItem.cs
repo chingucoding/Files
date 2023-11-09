@@ -239,6 +239,7 @@ namespace Files.App.UserControls.Sidebar
 
 		internal void Clicked()
 		{
+			GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: false);
 			if (IsGroupHeader)
 			{
 				if (CollapseEnabled)
